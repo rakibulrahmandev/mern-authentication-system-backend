@@ -6,6 +6,9 @@ import cookieParser from 'cookie-parser';
 import chalk from 'chalk';
 import db_connection from './database/db.config.js';
 
+// import routes ------------------------------------------------------------------->
+import sign_up_route from './routes/auth.signup.route.js';
+
 // dotenv config ------------------------------------------------------------------->
 dotenv.config();
 
@@ -22,6 +25,8 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     res.send('Mern Stact Authentication System.');
 });
+
+app.use('/api/v1/auth', sign_up_route);
 
 // port declare -------------------------------------------------------------------->
 const port = process.env.PORT || 8000;
