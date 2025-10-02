@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import chalk from 'chalk';
+import db_connection from './database/db.config.js';
 
 // dotenv config ------------------------------------------------------------------->
 dotenv.config();
@@ -28,4 +29,5 @@ const port = process.env.PORT || 8000;
 // start server -------------------------------------------------------------------->
 app.listen(port, () => {
     console.log(chalk.hex('#5800FF')(`server running on http://localhost:${port}`));
+    db_connection();
 });
