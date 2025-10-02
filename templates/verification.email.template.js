@@ -70,7 +70,7 @@ const verificationEmailTemplate = `
                                     <tr>
                                         <td align="center" style="padding-bottom: 30px;">
                                             <p style="font-size: 16px; line-height: 1.5; color: #5E5E5E; margin: 0;">
-                                                This code will expire in 24 hours.
+                                                This code will expire in 5 minutes.
                                             </p>
                                         </td>
                                     </tr>
