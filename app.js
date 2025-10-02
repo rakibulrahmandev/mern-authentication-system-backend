@@ -1,0 +1,31 @@
+// import modules ------------------------------------------------------------------>
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import chalk from 'chalk';
+
+// dotenv config ------------------------------------------------------------------->
+dotenv.config();
+
+// create app ---------------------------------------------------------------------->
+const app = express();
+
+// declare middlewares ------------------------------------------------------------->
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors({ credentials: true }));
+app.use(cookieParser());
+
+// declare routes ------------------------------------------------------------------>
+app.get('/', (req, res) => {
+    res.send('Mern Stact Authentication System.');
+});
+
+// port declare -------------------------------------------------------------------->
+const port = process.env.PORT || 8000;
+
+// start server -------------------------------------------------------------------->
+app.listen(port, () => {
+    console.log(chalk.hex('#5800FF')(`server running on http://localhost:${port}`));
+});
