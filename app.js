@@ -8,6 +8,7 @@ import db_connection from './database/db.config.js';
 
 // import routes ------------------------------------------------------------------->
 import sign_up_route from './routes/auth.signup.route.js';
+import sign_in_route from './routes/auth.signin.route.js';
 import sign_out_route from './routes/auth.signout.route.js';
 import verify_email_route from './routes/auth.verify.route.js';
 
@@ -29,8 +30,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/auth', sign_up_route);
-app.use('/api/v1/auth', verify_email_route);
+app.use('/api/v1/auth', sign_in_route);
 app.use('/api/v1/auth', sign_out_route);
+app.use('/api/v1/auth', verify_email_route);
 
 // port declare -------------------------------------------------------------------->
 const port = process.env.PORT || 8000;
