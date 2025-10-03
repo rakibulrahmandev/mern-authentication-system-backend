@@ -1,5 +1,4 @@
 // import modules ------------------------------------------------------------------>
-// create html template ---------------------------------->
 const resetPasswordTemplate = `
     <!DOCTYPE html>
     <html lang="en">
